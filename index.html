@@ -91,8 +91,40 @@ $("nav select").change(function() {
  -->
  	<div class="container">
 
-		<?php include("snippets/nav.php"); ?>
+	<nav class="four columns alpha">
+			<a href="index.html">
+			<img class="remove-bottom" style="margin-top:40px;" src="img/logo.png" />
+			</a>   
+			<p class="email">
+			<a href="mailto:chw160@ucsd.edu">chw160@ucsd.edu</a>
+			</p>
 
+            <div id="navmenu">
+				<ul>
+					<a id="nav-publications" href="/publications"><div><li>PUBLICATIONS</li></div></a>
+					<a id="nav-project" href="/projects"><div><li>PROJECTS</li></div></a>
+					<a id="nav-courses" href="/producstions"><div><li>PRODUCTIONS/li></div></a>
+				</ul>
+            </div>
+	</nav>
+		
+		<script type="text/javascript">
+// Populate dropdown with menu items
+$("nav a").each(function() {
+ var el = $(this);
+ $("<option />", {
+     "value"   : el.attr("href"),
+     "text"    : el.text()
+ }).appendTo("nav select");
+});
+
+$("nav select").change(function() {
+  window.location = $(this).find("option:selected").val();
+});
+
+</script>
+
+		
 		<section class="twelve columns omega">
         	<hr>
                 <img src="img/banner.jpg" />
