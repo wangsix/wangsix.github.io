@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* CSS Document */
+
+.headcontainer {
+	vertical-align:top;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:right;
+}
+
+#six {
+	font-size:14px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	color:black;
+	text-transform:uppercase;
+	white-space:nowrap;
+	margin-top:3px;
+	margin-bottom:6px;
+}
+
+#six a {
+	text-decoration:none;   
+	color: #666;
+	background: #fff;
+}
+
+
+#six a:hover {
+	color:#039;
+}
+
+
+.email{
+	color:#777;
+	text-transform:lowercase;
+	font-size:11px;
+	margin-top:1px;
+}
+
+.email a{
+	text-decoration:none;
+	color:#888;
+}
+
+.email a:hover{
+	color:#666;
+}
+
+
+.mediaborder{
+	background-color:#c7c7c7;
+	padding:1px;
+	-webkit-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	margin:5px 0px;
+}
+
+body#work a#nav-work, 
+body#courses a#nav-courses,
+body#project a#nav-project{
+	font-weight:bold;	
+}
+
+#navmenu {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	white-space:nowrap;
+}
+
+#navmenu ul {
+	margin: 0; 
+	padding: 0; 
+	list-style-type: none; 
+	list-style-image: none;
+	-moz-text-shadow: 0.9px 1px 1px white;
+	-webkit-text-shadow: 0.9px 1px 1px white;
+	text-shadow: 0.9px 1px 1px white; 
+}
+
+#navmenu a{
+	text-decoration:none;
+	color: #666;
+}
+
+#navmenu a div{
+	padding: 3px 3px 0px 3px;
+}
+
+#navmenu a:hover div{
+	color: #000;
+	background-color: #e2dfd4; 
+}
+
+h2{
+	font-size:14px;
+	font-weight:lighter;
+	text-transform:uppercase;
+	margin-top:50px;
+	color:#888;
+	-moz-text-shadow: 0.9px 1px 1px white;
+	-webkit-text-shadow: 0.9px 1px 1px white;
+	text-shadow: 0.9px 1px 1px white;
+}
+
+h2 a:hover{
+	text-decoration:none;
+	color:#999;
+}
+	
+.textbg{
+	background-color:#000;
+	padding:0 5px;
+}
+
+.textbg2{
+	background-color:none;
+	padding:0 5px;
+}
+
+
+.maincontent {
+	text-align:justify;
+}
+
+b1{
+	font-size:13px;
+}
+
+b2{
+	font-size:13px;
+}
+
+.space{
+	height:30%;
+}
+
+.grayitext{
+	color:#b0ab99;
+	font-size:13px;
+	font-style:italic;
+	font-family:"Times New Roman", Times, serif;
+	padding-left:5px;
+}
+
+.profname{
+	font-style:italic;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+}
+
+.workname{
+	font-style:italic;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	color:black;
+}
+
+.backlist a {
+	color:#888;
+	text-decoration: none;
+	text-align:left;
+	margin-top:25px;
+}
+
+.backlist a:hover {
+	color:#F15A29;
+}
+
+.sheetborder {
+	text-align:center; width:505px;
+	-webkit-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);       
+}
+
+select {
+	border-bottom: 1px solid #efefef;
+	border-right:1px solid #efefef;
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	color:#666;
+	font-family:"Times New Roman", Times, serif;
+	font-style:italic;
+
+}
+
+.downloadlink a {
+	text-decoration:none;	
+	color:#999;
+	float:right;
+	margin-top:0px
+}
+
+.downloadlink a:hover {
+	text-decoration:none; 
+	color:#F15A29;
+}
+
+.linktowork{
+	margin-bottom:-15px !important;
+}
+
+.linktowork a{
+	color:#69C;
+	text-decoration:none;
+}
+
+.linktowork a:hover {
+	color:#F15A29; 
+	text-decoration:none;
+}
+
+.lowercase {
+	text-transform:none;
+	font-family:"Times New Roman", Times, serif;
+	font-style:italic;
+	color:#b0ab99;
+}
+            
+.worklist{
+	text-decoration:none;
+	color:#555;
+}
+
