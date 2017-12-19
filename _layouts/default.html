@@ -65,21 +65,21 @@ h2 a:hover{
             </div>
 		</nav>
 		
-		<script type="text/javascript">
-		// Populate dropdown with menu items
-		$("nav a").each(function() {
-		 var el = $(this);
-		 $("<option />", {
-			 "value"   : el.attr("href"),
-			 "text"    : el.text()
-		 }).appendTo("nav select");
-		});
+<script type="text/javascript">
+// Populate dropdown with menu items
+$("nav a").each(function() {
+ var el = $(this);
+ $("<option />", {
+	 "value"   : el.attr("href"),
+	 "text"    : el.text()
+ }).appendTo("nav select");
+});
 
-		$("nav select").change(function() {
-		  window.location = $(this).find("option:selected").val();
-		});
+$("nav select").change(function() {
+  window.location = $(this).find("option:selected").val();
+});
 
-		</script>		
+</script>		
 		<section class="twelve columns omega">
 			{{ content }}
 		</section>
