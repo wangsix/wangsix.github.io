@@ -44,10 +44,11 @@ h2 a:hover{
 	color:#ccc;
 }
 </style>
-
 </head>
+
 <body id="index">
-	<nav class="four columns alpha">
+ 	<div class="container">
+		<nav class="four columns alpha">
 			<a href="index.html">
 			<img class="remove-bottom" style="margin-top:40px;" src="img/logo.png" />
 			</a>   
@@ -62,30 +63,26 @@ h2 a:hover{
 					<a id="nav-courses" href="/producstions"><div><li>PRODUCTIONS</li></div></a>
 				</ul>
             </div>
-	</nav>
+		</nav>
 		
 		<script type="text/javascript">
-// Populate dropdown with menu items
-$("nav a").each(function() {
- var el = $(this);
- $("<option />", {
-     "value"   : el.attr("href"),
-     "text"    : el.text()
- }).appendTo("nav select");
-});
+		// Populate dropdown with menu items
+		$("nav a").each(function() {
+		 var el = $(this);
+		 $("<option />", {
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+		});
 
-$("nav select").change(function() {
-  window.location = $(this).find("option:selected").val();
-});
+		$("nav select").change(function() {
+		  window.location = $(this).find("option:selected").val();
+		});
 
-</script>
-
- 	<div class="container">
-		
+		</script>		
 		<section class="twelve columns omega">
-    {{ content }}
+			{{ content }}
 		</section>
-
 	</div><!-- container -->
 
 
