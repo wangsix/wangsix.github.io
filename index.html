@@ -1,39 +1,45 @@
 ---
 layout: default
-title: Cheng-i Wang
+permalink: /
+description: Cheng-i Wang (汪正一) — Deep Learning Engineer at AudioShake, PhD in Computer Music from UC San Diego, audio source separation and music information retrieval, bassist.
 ---
+{%- assign bio = site.data.bio -%}
+{%- assign portrait = site.static_files | where: "path", "/img/portrait.jpg" | first -%}
 
-<hr>
-<img src="img/banner.jpg" />
+<img class="photo photo--hero" src="{{ '/img/banner.jpg' | relative_url }}" alt="A band performing on an outdoor stage" width="700" height="229">
 
-<p>
-<h1 style="margin-top:-10px;"><span class="textbg">UPDATE</span></h1>
-	
-	[04/2018] Started working as an Audio Software Engineer at Smule, Inc. 
-	<br /><br /> 
+<section class="about">
+  {%- if portrait %}
+  <img class="portrait" src="{{ '/img/portrait.jpg' | relative_url }}" alt="Portrait of Cheng-i Wang">
+  {%- endif %}
+  <h1>
+    <span lang="en">{{ bio.name }} <span class="about-name-zh">{{ bio.name_zh }}</span></span>
+    <span lang="zh-Hant">{{ bio.name_zh }}（{{ bio.nickname_zh }}）<span class="about-name-zh">{{ bio.name }}</span></span>
+  </h1>
+  <p class="headline"><span lang="en">{{ bio.headline.en }}</span><span lang="zh-Hant">{{ bio.headline.zh }}</span></p>
+  <div lang="en">
+    {%- for p in bio.paragraphs.en %}
+    <p>{{ p }}</p>
+    {%- endfor %}
+  </div>
+  <div lang="zh-Hant">
+    {%- for p in bio.paragraphs.zh %}
+    <p>{{ p }}</p>
+    {%- endfor %}
+  </div>
+</section>
 
-	[04/2018] Presented the work with Prof. George Tzanetakis, <a href="http://acsweb.ucsd.edu/~chw160/pdf/icassp_2018_singing_style_Wang_Tzanetakis.pdf">"Singing Style Investigation by Residual Siamese Convolutional Neural Networks"</a>, at ICASSP 2018 Calgary.  
-	<br /><br /> 
-
-	[03/2018] Graduated from UC San Diego as a Ph.D in music. 
-	<br /><br /> 
-	
-<!--
-	[10/2017] Presented my work on <a href="https://ismir2017.smcnus.org/wp-content/uploads/2017/10/102_Paper.pdf">crowdsourcing music segmentation annotations</a> during summer 2016 Adobe Research internship at ISMIR 2017.
-	<br /><br /> 
-
-	[09/2017] Finished summer intership at Smule in the audio/video team working on analyzing singing styles with deep learning techniques.
-	<br /><br /> 
--->
-	
-<h1 style="margin-top:-10px;"><span class="textbg">ABOUT</span></h1>
-	I am Cheng-i Wang, currently an Audio Software Engineer at Smule, Inc., working on making everyone enjoys making music.
-
-	<br /><br />
-
-	My research interest is analyzing/generating music with content-based music information retrieval techniques. I did my Ph.D at UCSD with Prof. Shlomo Dubnov and Master`s degree at NYU with Prof. Juan Bello. 
-
-	<br /><br />
-	Apart from academic activities, I am a composer, sound/projection/live image processing designer for theatrical performances.   
-<br /> 	                    
-</p>
+<section>
+  <h2><span class="label"><span lang="en">Updates</span><span lang="zh-Hant">近況</span></span></h2>
+  <ul class="updates">
+    {%- for u in site.data.updates %}
+    <li>
+      <time datetime="{{ u.date }}">{{ u.date }}</time>
+      <span>
+        {%- if u.url %}<a href="{{ u.url }}"><span lang="en">{{ u.en }}</span><span lang="zh-Hant">{{ u.zh }}</span></a>
+        {%- else %}<span lang="en">{{ u.en }}</span><span lang="zh-Hant">{{ u.zh }}</span>{% endif %}
+      </span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
