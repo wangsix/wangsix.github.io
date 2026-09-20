@@ -1,65 +1,36 @@
 ---
 layout: default
-title: Publications - Cheng-i Wang
+title: Publications
+permalink: /publications.html
+description: Publications and patents of Cheng-i Wang — music information retrieval, machine improvisation, audio source separation.
 ---
-<hr>
-<img src="img/banner4.jpg" />
+<img class="photo photo--ribbon" src="{{ '/img/banner4.jpg' | relative_url }}" alt="" width="700" height="229">
 
-<h1 style="margin-top: -10px;"><a href="https://scholar.google.com/citations?user=SmuY2sMAAAAJ&hl=en">Google Scholar Profile</a></h1>
+<h1><span lang="en">Publications</span><span lang="zh-Hant">論文與專利</span></h1>
+<p class="muted-serif"><a href="https://scholar.google.com/citations?user=SmuY2sMAAAAJ">Google Scholar profile</a></p>
 
-<h1 style="margin-top: -10px;"><span class="textbg">2018</span></h1>
+{%- assign groups = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+{%- for g in groups %}
+<h2><span class="label">{{ g.name }}</span></h2>
+<ol class="pubs">
+  {%- for p in g.items %}
+  <li>
+    <span class="pub-authors">{{ p.authors }}.</span>
+    {% if p.url %}<a class="pub-title" href="{{ p.url }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}.
+    <span class="pub-venue">{{ p.venue }}.</span>
+    {%- if p.note %} <span class="pub-note">{{ p.note }}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ol>
+{%- endfor %}
 
-Wang, Cheng-i and Tzanetakis. <a href="http://acsweb.ucsd.edu/~chw160/pdf/icassp_2018_singing_style_Wang_Tzanetakis.pdf">"Singing Style Investigation by Residual Siamese Convolutional Neural Networks"</a>. Proceedings of ICASSP 2018.
-<br /><br />
-
-Wang, Cheng-i. "Analysis and Generation of Music Signals with the Variable Markov Oracle". Ph.D Dissertation. UC San Diego, 2018.
-<br /><br />
-
-<h1 style="margin-top: -10px;"><span class="textbg">2017</span></h1>
-
-Wang, Cheng-i and Mysore, Gautham. <a href="https://ismir2017.smcnus.org/wp-content/uploads/2017/10/102_Paper.pdf">"Re-Visiting the Music Segmentation Problem with Crowdsourcing"</a>. Proceedings of ISMIR 2017. 
-<br /><br />
-
-Wang, Cheng-i., and Dubnov, Shlomo. <a href="https://www.researchgate.net/profile/Shlomo_Dubnov/publication/320268052_Context-Aware_Hidden_Markov_Models_of_Jazz_Music_with_Variable_Markov_Oracle/links/59d8f28daca272e60966c983/Context-Aware-Hidden-Markov-Models-of-Jazz-Music-with-Variable-Markov-Oracle.pdf">"Context-Aware Hidden Markov Models of Jazz Music with Variable Markov Oracle"</a>. 5th International Workshop on Musical Metacreation (MUME 2017) at the Eight International Conference on Computational Creativity, ICCC 2017
-<br /><br />
-
-<h1 style="margin-top: -10px;"><span class="textbg">2016</span></h1>
-
-Wang, Cheng-i., Hsu, Jennifer , and Dubnov, Shlomo. "Machine Improvisation with Variable Markov Oracle: Toward Guided and Structured Improvisation." Computers in Entertainment (CIE) 14.3 (2016): 4.
-<br /><br />
-
-Wang, Cheng-i, and Mysore, Gautham. <a href="https://ccrma.stanford.edu/~gautham/Site/Publications_files/segmentation-icassp_2016.pdf">"Structural Segmentation with the Variable Markov Oracle and Boundary Adjustment"</a>. Proceedings of IEEE ICASSP 2016.  
-<br /><br />
-            
-<h1 style="margin-top: -10px;"><span class="textbg">2015</span></h1>
-
-Wang, Cheng-i, and Dubnov, Shlomo. <a href="http://dx.doi.org/10.1109/MMUL.2015.76">"The Variable Markov Oracle: Algorithms for Human Gesture Applications"</a>. IEEE MultiMedia Vol.22 Issue. 4.
-<br /><br />            
-            
-Wang, Cheng-i, Hsu, Jennifer, and Dubnov, Shlomo. <a href="http://ismir2015.uma.es/articles/78_Paper.pdf">"Music Pattern Discovery with Variable Markov Oracle: A Unified Approach to Symbolic and Audio Representations"</a>. Proceedings of International Society for Music Information Retrieval Conference (ISMIR2015).
-<br /><br />
-      
-Dubnov, Tammuz, and Wang, Cheng-i. <a href="http://arxiv.org/abs/1509.04751">"Free-body Gesture Tracking and Augmented Reality Improvisation for Floor and Aerial Dance"</a>. Technical paper in arXiv. 
-<br /><br />
-	
-Wang, Cheng-i, and Dubnov, Shlomo. <a href="http://dx.doi.org/10.1109/ICASSP.2015.7178056">"Pattern Discovery from Audio Recordings by Variable Markov Oracle: A Music Information Dynamics Approach"</a>. Proceedings of IEEE ICASSP 2015. 
-<br /><br />
-
-<h1 style="margin-top: -10px;"><span class="textbg">2014</span></h1>
-            	
-Wang, Cheng-i, and Dubnov, Shlomo. <a href="http://dx.doi.org/10.1109/ISM.2014.39">"Variable Markov Oracle: A Novel Sequential Data Points Clustering Algorithm with Application to 3D Gesture Query-Matching"</a>. Proceedings of IEEE International Symposium on Multimedia (ISM2014). 12/2014.
-<br /><br />
-      
-Wang, Cheng-i, and Smyth, Tamara. <a href="http://acsweb.ucsd.edu/~chw160/pdf/cim14_sax_convex_Wang_Smyth_Lipton.pdf">"Estimation of Saxophone Control Parameters by Convex Optimization"</a>. Proceedings of Conference on Interdisciplinary Musicology 2014. 12/2014.
-<br /><br />
-      
-Wang, Cheng-i, and Dubnov, Shlomo. <a href="http://acsweb.ucsd.edu/~chw160/pdf/mume2014_vmo_Wang_Dubnov.pdf">"Guided Music Synthesis with Variable Markov Oracle"</a>. Proceedings of 3rd International Workshop on Musical Metacreation 2014. 10/2014.
-<br /><br />
-	
-Smyth, Tamara, and Wang, Cheng-i. <a href="http://acsweb.ucsd.edu/~chw160/pdf/smc14_saxophone_Smyth_Wang.pdf">"Toward Real-time Estimation of Tonehole Configuration"</a>. Proceedings of Joint ICMC-SMC 2014. 09/2014.			
-<br /><br />		
-      
-<h1 style="margin-top: -10px;"><span class="textbg">2013</span></h1>
-
-Wang, Cheng-i. <a href="http://chengiwang.com/pdf/Cheng-i_Wang_master_thesis.pdf">"Quantifying Pianist Style - An Investigation of Performer Space and Expressive Gesture from Audio Recordings"</a>. Master`s Thesis. New York University, 2013.
-<br /><br />
+<h2><span class="label"><span lang="en">Patents</span><span lang="zh-Hant">專利</span></span></h2>
+<ol class="pubs">
+  {%- for p in site.data.patents %}
+  <li>
+    <span class="pub-authors">{{ p.inventors }}.</span>
+    <a class="pub-title" href="{{ p.url }}">{{ p.title }}</a>.
+    <span class="pub-venue">{{ p.number }}, {{ p.status }} {{ p.date }}.</span>
+  </li>
+  {%- endfor %}
+</ol>
