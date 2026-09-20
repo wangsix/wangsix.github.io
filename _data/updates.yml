@@ -1,0 +1,29 @@
+# Newest first. date is YYYY-MM. url is optional. Quote any text containing ": " or " #".
+- date: 2026-06
+  en: "Spoke at Taiwan Multimedia Tech meetup #12 in Taipei on “What LLMs Left Untouched in Audio”, a look at the structural split inside audio AI."
+  zh: "於台北 Taiwan Multimedia Tech #12 分享「LLM 沒吃掉的那塊 Audio」，談 audio AI 的結構性分裂。"
+- date: 2026-04   # approx.
+  en: AudioShake launched Dialogue RT, dialogue isolation at 11 ms end-to-end for live broadcast. I worked on getting the low-latency separation to ship.
+  zh: AudioShake 發表 Dialogue RT，11 毫秒端到端的即時人聲分離，用於直播。我負責低延遲分離的部分。
+- date: 2026-01   # approx.
+  en: Gave a tech talk at KKCompany (KKBOX) in Taipei on AI source separation and how it differs from generative models.
+  zh: 於台北 KKCompany（KKBOX）分享 AI 音訊分離技術，以及它與生成式模型的差異。
+- date: 2023-03
+  en: Joined AudioShake as a Deep Learning Engineer.
+  zh: 加入 AudioShake 擔任深度學習工程師。
+- date: 2022-05
+  en: "Co-authored “ToNet: Tone-Octave Network for Singing Melody Extraction from Polyphonic Music” at ICASSP 2022."
+  zh: "合著論文 “ToNet: Tone-Octave Network for Singing Melody Extraction from Polyphonic Music” 發表於 ICASSP 2022。"
+- date: 2020-05
+  en: Co-authored “Deep Autotuner” at ICASSP 2020 and the TISMIR survey on audio-based music structure analysis.
+  zh: 合著 “Deep Autotuner”（ICASSP 2020）與 TISMIR 音樂結構分析回顧論文。
+- date: 2019-10
+  en: US patent 10,446,123, “Intuitive music visualization using efficient structural segmentation”, issued (with Adobe Research).
+  zh: 美國專利 10,446,123「Intuitive music visualization using efficient structural segmentation」核准（與 Adobe Research 合作）。
+- date: 2018-04
+  en: Joined Smule as an Audio Software Engineer, and presented “Singing Style Investigation by Residual Siamese Convolutional Neural Networks” at ICASSP 2018 in Calgary.
+  zh: 加入 Smule 擔任音訊軟體工程師，並於 ICASSP 2018（卡加利）發表 “Singing Style Investigation by Residual Siamese Convolutional Neural Networks”。
+  url: http://acsweb.ucsd.edu/~chw160/pdf/icassp_2018_singing_style_Wang_Tzanetakis.pdf
+- date: 2018-03
+  en: Graduated from UC San Diego with a PhD in Music (Computer Music).
+  zh: 取得 UC San Diego 音樂博士（電腦音樂）學位。

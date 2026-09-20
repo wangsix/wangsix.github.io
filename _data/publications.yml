@@ -1,0 +1,120 @@
+# One entry per paper. year is an integer; entries within a year keep this order.
+# url only when known for certain; note is free text shown after the venue.
+- year: 2025
+  authors: I. Shapiro, R. Huang, Z. Novack, C. Wang, H.-W. Dong, T. Berg-Kirkpatrick, et al.
+  title: Synthesizing Composite Hierarchical Structure from Symbolic Music Corpora
+  venue: arXiv:2502.15849
+  url: https://arxiv.org/abs/2502.15849
+- year: 2023
+  authors: O. Cífka, C. Dimitriou, C. Wang, H. Schreiber, L. Miner, F.-R. Stöter
+  title: "Jam-ALT: A Formatting-Aware Lyrics Transcription Benchmark"
+  venue: arXiv:2311.13987
+  url: https://arxiv.org/abs/2311.13987
+- year: 2022
+  authors: K. Chen, S. Yu, C. Wang, W. Li, T. Berg-Kirkpatrick, S. Dubnov
+  title: "ToNet: Tone-Octave Network for Singing Melody Extraction from Polyphonic Music"
+  venue: Proceedings of IEEE ICASSP 2022
+- year: 2021
+  authors: S. Dubnov, K. Huang, C. Wang
+  title: Towards Cross-Cultural Analysis Using Music Information Dynamics
+  venue: arXiv:2111.12588
+  url: https://arxiv.org/abs/2111.12588
+- year: 2020
+  authors: O. Nieto, G. J. Mysore, C. Wang, J. B. L. Smith, J. Schlüter, T. Grill, B. McFee
+  title: "Audio-Based Music Structure Analysis: Current Trends, Open Challenges, and Applications"
+  venue: Transactions of the International Society for Music Information Retrieval, 3(1), 2020
+- year: 2020
+  authors: K. Chen, C. Wang, T. Berg-Kirkpatrick, S. Dubnov
+  title: "Music SketchNet: Controllable Music Generation via Factorized Representations of Pitch and Rhythm"
+  venue: Proceedings of ISMIR 2020
+  url: https://arxiv.org/abs/2008.01291
+- year: 2020
+  authors: S. Wager, G. Tzanetakis, C. Wang, M. Kim
+  title: "Deep Autotuner: A Pitch Correcting Network for Singing Performances"
+  venue: Proceedings of IEEE ICASSP 2020
+- year: 2019
+  authors: S. Wager, G. Tzanetakis, S. Sullivan, C. Wang, J. Shimmin, M. Kim, P. Cook
+  title: "Intonation: A Dataset of Quality Vocal Performances Refined by Spectral Clustering on Pitch Congruence"
+  venue: Proceedings of IEEE ICASSP 2019
+- year: 2019
+  authors: S. Wager, G. Tzanetakis, C. Wang, L. Guo, A. Sivaraman, M. Kim
+  title: "Deep Autotuner: A Data-Driven Approach to Natural-Sounding Pitch Correction for Singing Voice in Karaoke Performances"
+  venue: arXiv:1902.00956
+  url: https://arxiv.org/abs/1902.00956
+- year: 2018
+  authors: C. Wang, G. Tzanetakis
+  title: Singing Style Investigation by Residual Siamese Convolutional Neural Networks
+  venue: Proceedings of IEEE ICASSP 2018
+  url: http://acsweb.ucsd.edu/~chw160/pdf/icassp_2018_singing_style_Wang_Tzanetakis.pdf
+- year: 2018
+  authors: C. Wang
+  title: Analysis and Generation of Music Signals with the Variable Markov Oracle
+  venue: PhD dissertation, University of California, San Diego
+- year: 2017
+  authors: C. Wang, G. J. Mysore, S. Dubnov
+  title: Re-Visiting the Music Segmentation Problem with Crowdsourcing
+  venue: Proceedings of ISMIR 2017
+  url: https://ismir2017.smcnus.org/wp-content/uploads/2017/10/102_Paper.pdf
+- year: 2017
+  authors: C. Wang, S. Dubnov
+  title: Context-Aware Hidden Markov Models of Jazz Music with Variable Markov Oracle
+  venue: 5th International Workshop on Musical Metacreation (MUME 2017), at ICCC 2017
+  url: https://www.researchgate.net/profile/Shlomo_Dubnov/publication/320268052_Context-Aware_Hidden_Markov_Models_of_Jazz_Music_with_Variable_Markov_Oracle/links/59d8f28daca272e60966c983/Context-Aware-Hidden-Markov-Models-of-Jazz-Music-with-Variable-Markov-Oracle.pdf
+- year: 2016
+  authors: C. Wang, J. Hsu, S. Dubnov
+  title: "Machine Improvisation with Variable Markov Oracle: Toward Guided and Structured Improvisation"
+  venue: Computers in Entertainment, 14(3), 2016
+- year: 2016
+  authors: C. Wang, G. J. Mysore
+  title: Structural Segmentation with the Variable Markov Oracle and Boundary Adjustment
+  venue: Proceedings of IEEE ICASSP 2016
+  url: https://ccrma.stanford.edu/~gautham/Site/Publications_files/segmentation-icassp_2016.pdf
+- year: 2015
+  authors: C. Wang, S. Dubnov
+  title: "The Variable Markov Oracle: Algorithms for Human Gesture Applications"
+  venue: IEEE MultiMedia, 22(4), 2015
+  url: https://doi.org/10.1109/MMUL.2015.76
+- year: 2015
+  authors: C. Wang, J. Hsu, S. Dubnov
+  title: "Music Pattern Discovery with Variable Markov Oracle: A Unified Approach to Symbolic and Audio Representations"
+  venue: Proceedings of ISMIR 2015
+  url: http://ismir2015.uma.es/articles/78_Paper.pdf
+- year: 2015
+  authors: T. Dubnov, C. Wang
+  title: Free-body Gesture Tracking and Augmented Reality Improvisation for Floor and Aerial Dance
+  venue: arXiv:1509.04751
+  url: https://arxiv.org/abs/1509.04751
+- year: 2015
+  authors: C. Wang, S. Dubnov
+  title: "Pattern Discovery from Audio Recordings by Variable Markov Oracle: A Music Information Dynamics Approach"
+  venue: Proceedings of IEEE ICASSP 2015
+  url: https://doi.org/10.1109/ICASSP.2015.7178056
+- year: 2014
+  authors: C. Wang, S. Dubnov
+  title: "Variable Markov Oracle: A Novel Sequential Data Points Clustering Algorithm with Application to 3D Gesture Query-Matching"
+  venue: Proceedings of IEEE International Symposium on Multimedia (ISM 2014)
+  url: https://doi.org/10.1109/ISM.2014.39
+- year: 2014
+  authors: C. Wang, T. Smyth, Z. C. Lipton
+  title: Estimation of Saxophone Control Parameters by Convex Optimization
+  venue: Proceedings of the 9th Conference on Interdisciplinary Musicology (CIM14)
+  url: http://acsweb.ucsd.edu/~chw160/pdf/cim14_sax_convex_Wang_Smyth_Lipton.pdf
+- year: 2014
+  authors: C. Wang, S. Dubnov
+  title: Guided Music Synthesis with Variable Markov Oracle
+  venue: 3rd International Workshop on Musical Metacreation (MUME 2014)
+  url: http://acsweb.ucsd.edu/~chw160/pdf/mume2014_vmo_Wang_Dubnov.pdf
+- year: 2014
+  authors: T. Smyth, C. Wang
+  title: Toward Real-Time Estimation of Tonehole Configuration
+  venue: Proceedings of the Joint ICMC–SMC 2014 Conference
+  url: http://acsweb.ucsd.edu/~chw160/pdf/smc14_saxophone_Smyth_Wang.pdf
+- year: 2013
+  authors: C. Wang
+  title: "Quantifying Pianist Style: An Investigation of Performer Space and Expressive Gestures from Audio Recordings"
+  venue: Master’s thesis, New York University
+  url: http://chengiwang.com/pdf/Cheng-i_Wang_master_thesis.pdf
+- year: 2011
+  authors: C. Wang
+  title: A Report on Information Theoretic Approaches with Melodic Boundaries Detection
+  venue: Technical report

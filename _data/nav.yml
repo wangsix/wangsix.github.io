@@ -1,0 +1,14 @@
+- label_en: Home
+  label_zh: 首頁
+  url: /
+- label_en: Publications
+  label_zh: 論文
+  url: /publications.html
+- label_en: Projects
+  label_zh: 專案
+  url: /projects.html
+  hidden: true
+- label_en: Music
+  label_zh: 音樂
+  url: /music.html
+  hidden: true
