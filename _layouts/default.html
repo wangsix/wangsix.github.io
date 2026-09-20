@@ -1,96 +1,68 @@
-<!DOCTYPE HTML>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
 <head>
-
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>{{ page.title }}</title>
-	<meta name="description" content="Website of Cheng-i Wang">
-	<meta name="author" content="">
-
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="css/stylesheets/base.css">
-	<link rel="stylesheet" href="css/stylesheets/skeleton.css">
-	<link rel="stylesheet" href="css/stylesheets/layout.css">
-    	<link href="css/style.css" rel="stylesheet" type="text/css" />
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.ico?" type="image/x-icon"/>
-<!-- 	<link rel="shortcut icon" type="image/png" href="{{ site.url }}/img/favsix.png"> -->
-	<link rel="apple-touch-icon" href="img/fav57.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/fav72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/fav114.png">
-<style>
-.worklist{
-	text-decoration:none;
-	color:#666;
-}
-
-h2 a:hover{
-	text-decoration:none;
-	color:#ccc;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f3e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1d1b17" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ '/img/banner.jpg' | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/img/favsix114.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/site.css' | relative_url }}">
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem('lang');
+        if (l === 'zh' || l === 'en') {
+          document.documentElement.setAttribute('data-lang', l);
+          document.documentElement.lang = l === 'zh' ? 'zh-Hant' : 'en';
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-mark" src="{{ '/img/chengiwangwebsite.png' | relative_url }}" alt="" width="44" height="42">
+      <span class="brand-name"><span lang="en">Cheng-i Wang</span><span lang="zh-Hant">汪正一</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      {%- for item in site.data.nav -%}
+      {%- unless item.hidden -%}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}><span lang="en">{{ item.label_en }}</span><span lang="zh-Hant">{{ item.label_zh }}</span></a>
+      {%- endunless -%}
+      {%- endfor -%}
+      <button class="lang-toggle" type="button" aria-label="Switch language / 切換語言"><span lang="en">中文</span><span lang="zh-Hant">EN</span></button>
+    </nav>
+  </header>
 
-<body id="index">
- 	<div class="container">
-		<nav class="four columns alpha">
-			<a href="index.html">
-			<img class="remove-bottom" style="margin-top:40px;" src="img/logo.png" />
-			</a>   
-			<p class="email">
-			<a href="mailto:chw160@ucsd.edu">chw160@ucsd.edu</a>
-			</p>
+  <main class="site-main">
+    {{ content }}
+  </main>
 
-            <div id="navmenu">
-				<ul>
-					<a id="nav-publications" href="publications.html"><div><li>PUBLICATIONS</li></div></a>
-<!--
-					<a id="nav-project" href="/projects"><div><li>PROJECTS</li></div></a>
-					<a id="nav-courses" href="/producstions"><div><li>PRODUCTIONS</li></div></a>
--->
-				</ul>
-            </div>
-		</nav>
-		
-<script type="text/javascript">
-// Populate dropdown with menu items
-$("nav a").each(function() {
- var el = $(this);
- $("<option />", {
-	 "value"   : el.attr("href"),
-	 "text"    : el.text()
- }).appendTo("nav select");
-});
+  <footer class="site-footer">
+    <a href="https://www.linkedin.com/in/cheng-i-wang/" rel="me">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=SmuY2sMAAAAJ" rel="me">Google Scholar</a>
+    <span class="site-footer__copy">© {{ site.time | date: '%Y' }} Cheng-i Wang</span>
+  </footer>
 
-$("nav select").change(function() {
-  window.location = $(this).find("option:selected").val();
-});
-
-</script>		
-		<section class="twelve columns omega">
-			{{ content }}
-		<div style="height:80px">&nbsp;</div>
-		</section>
-	</div><!-- container -->
-
-
-<!-- End Document
-================================================== -->
+  <script>
+    document.querySelector('.lang-toggle').addEventListener('click', function () {
+      var h = document.documentElement;
+      var l = h.getAttribute('data-lang') === 'zh' ? 'en' : 'zh';
+      h.setAttribute('data-lang', l);
+      h.lang = l === 'zh' ? 'zh-Hant' : 'en';
+      try { localStorage.setItem('lang', l); } catch (e) {}
+    });
+  </script>
 </body>
 </html>
