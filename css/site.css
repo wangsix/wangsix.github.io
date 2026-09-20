@@ -21,7 +21,6 @@
   --label-bg: #181818;
   --label-fg: #f6f3e6;
   --photo-filter: grayscale(.6) sepia(.2) contrast(.95);
-  --logo-filter: none;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
   --serif-italic: "Newsreader", Georgia, "Times New Roman", "PingFang TC", "Noto Serif TC", serif;
 }
@@ -37,7 +36,6 @@
     --label-bg: #f1ecdd;
     --label-fg: #1d1b17;
     --photo-filter: grayscale(.6) sepia(.2) brightness(.75);
-    --logo-filter: invert(1) brightness(.92);
   }
 }
 
@@ -89,7 +87,8 @@ button { font: inherit; }
 }
 .brand { display: inline-flex; align-items: center; gap: .75rem; color: var(--text-strong); }
 .brand:hover { color: var(--text-strong); text-decoration: none; }
-.brand-mark { width: 44px; height: auto; filter: var(--logo-filter); image-rendering: auto; }
+.brand-mark { display: inline-flex; width: 44px; color: var(--text-strong); }
+.brand-mark svg { width: 100%; height: auto; }
 .brand-name { font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .85rem; }
 .brand-name [lang="zh-Hant"] { letter-spacing: .3em; font-size: 1rem; }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; }
