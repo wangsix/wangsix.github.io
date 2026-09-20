@@ -60,12 +60,12 @@
 **Interfaces:**
 - Produces: `site.title`, `site.description`, `site.url` used by the layout; `_site/` build output used by every later verification step.
 
-- [ ] **Step 1: Confirm the build baseline fails for the right reason**
+- [x] **Step 1: Confirm the build baseline fails for the right reason**
 
 Run: `$JEKYLL build 2>&1 | tail -5`
 Expected: builds (old site) or errors mentioning missing gems. Either way, note the output; this is the "before".
 
-- [ ] **Step 2: Write `_config.yml`**
+- [x] **Step 2: Write `_config.yml`**
 
 ```yaml
 title: Cheng-i Wang
@@ -85,7 +85,7 @@ exclude:
   - node_modules
 ```
 
-- [ ] **Step 3: Write `Gemfile`**
+- [x] **Step 3: Write `Gemfile`**
 
 ```ruby
 source "https://rubygems.org"
@@ -94,7 +94,7 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 ```
 
-- [ ] **Step 4: Update `.gitignore`**
+- [x] **Step 4: Update `.gitignore`**
 
 ```
 _site/
@@ -105,7 +105,7 @@ Gemfile.lock
 vendor/
 ```
 
-- [ ] **Step 5: Delete dead assets**
+- [x] **Step 5: Delete dead assets**
 
 ```bash
 git rm -q css/style.css css/stylesheets/base.css css/stylesheets/skeleton.css css/stylesheets/layout.css \
@@ -117,12 +117,12 @@ ls img
 ```
 Expected `ls img`: `banner.jpg banner2.jpg banner3.jpg banner4.jpg bannerEFX.jpg bannerLDA.jpg bannerMO.jpg bannerPilot.jpg chengiwangwebsite.png favsix.png favsix114.png favsix72.png logo.png logo_hover.png p11.jpg p9.jpg`
 
-- [ ] **Step 6: Build**
+- [x] **Step 6: Build**
 
 Run: `$JEKYLL build 2>&1 | tail -3 && ls _site`
 Expected: "done in N seconds"; `_site` contains `index.html`, `publications.html`, `img/`, `assets/`, no `docs/`, no `Gemfile`.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
@@ -146,7 +146,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
   - `site.data.publications[]`: `year` (int), `authors`, `title`, `venue`, `url` (optional), `note` (optional)
   - `site.data.patents[]`: `title`, `number`, `status`, `date`, `inventors`, `url`
 
-- [ ] **Step 1: Write `_data/nav.yml`**
+- [x] **Step 1: Write `_data/nav.yml`**
 
 ```yaml
 - label_en: Home
@@ -165,7 +165,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
   hidden: true
 ```
 
-- [ ] **Step 2: Write `_data/bio.yml`**
+- [x] **Step 2: Write `_data/bio.yml`**
 
 ```yaml
 name: Cheng-i Wang
@@ -206,7 +206,7 @@ paragraphs:
       出國前是職業 bass 手——阿霈樂團（Apay）團長、陳珊妮與魏如萱演唱會樂手、臺南人劇團《閹雞》配樂兼台南場指揮。
 ```
 
-- [ ] **Step 3: Write `_data/updates.yml`** (dates marked approx. are to be corrected by the owner)
+- [x] **Step 3: Write `_data/updates.yml`** (dates marked approx. are to be corrected by the owner)
 
 ```yaml
 # Newest first. date is YYYY-MM. url is optional.
@@ -240,7 +240,7 @@ paragraphs:
   zh: 取得 UC San Diego 音樂博士（電腦音樂）學位。
 ```
 
-- [ ] **Step 4: Write `_data/publications.yml`**
+- [x] **Step 4: Write `_data/publications.yml`**
 
 ```yaml
 # One entry per paper. year is an integer; entries within a year keep this order.
@@ -365,7 +365,7 @@ paragraphs:
   venue: Technical report
 ```
 
-- [ ] **Step 5: Write `_data/patents.yml`**
+- [x] **Step 5: Write `_data/patents.yml`**
 
 ```yaml
 - title: Intuitive music visualization using efficient structural segmentation
@@ -382,7 +382,7 @@ paragraphs:
   url: https://patents.google.com/patent/US20220222294A1/en
 ```
 
-- [ ] **Step 6: Validate the YAML parses and counts are right**
+- [x] **Step 6: Validate the YAML parses and counts are right**
 
 Run:
 ```bash
@@ -390,7 +390,7 @@ ruby -ryaml -e 'd=Dir["_data/*.yml"].map{|f|[f,YAML.load_file(f)]}.to_h; d.each{
 ```
 Expected: `_data/bio.yml: 5`, `_data/nav.yml: 4`, `_data/patents.yml: 2`, `_data/publications.yml: 25`, `_data/updates.yml: 9`, no abort.
 
-- [ ] **Step 7: Check the publication links are alive** (report only; do not delete entries)
+- [x] **Step 7: Check the publication links are alive** (report only; do not delete entries)
 
 Run:
 ```bash
@@ -398,7 +398,7 @@ ruby -ryaml -e 'YAML.load_file("_data/publications.yml").each{|p| puts p["url"] 
 ```
 Expected: mostly 200. Record any non-200 URLs for the final report to the owner (acsweb.ucsd.edu and chengiwang.com links are the likely casualties). Leave them in place.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add _data
@@ -419,7 +419,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: `site.data.nav`, `site.title`, `site.description`, `page.title`, `page.description`, `page.url`.
 - Produces for pages: CSS classes `.photo`, `.photo--hero`, `.photo--ribbon`, `.label`, `.muted-serif`, `.about`, `.portrait`, `.headline`, `.updates`, `.pubs`, `.pub-title`, `.pub-authors`, `.pub-venue`, `.pub-note`; the convention that any element with `lang="en"` or `lang="zh-Hant"` is shown only in that language.
 
-- [ ] **Step 1: Write `_layouts/default.html`**
+- [x] **Step 1: Write `_layouts/default.html`**
 
 ```html
 <!DOCTYPE html>
@@ -492,7 +492,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 </html>
 ```
 
-- [ ] **Step 2: Write `css/site.css`**
+- [x] **Step 2: Write `css/site.css`**
 
 ```css
 /* ---------- Fonts (self-hosted, Latin only; CJK falls back to system) ---------- */
@@ -664,7 +664,7 @@ a.pub-title:hover { color: var(--accent); }
 .pub-venue, .pub-note { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); }
 ```
 
-- [ ] **Step 3: Build and check the chrome**
+- [x] **Step 3: Build and check the chrome**
 
 Run:
 ```bash
@@ -677,7 +677,7 @@ test -f _site/css/site.css && test -f _site/assets/fonts/inter-latin-400-normal.
 ```
 Expected: build done; `1`; `href="/publications.html"`; a number ≥ 3; `0` (hidden nav item absent); `assets-ok`.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add _layouts/default.html css/site.css assets/fonts
@@ -696,7 +696,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Consumes: `site.data.bio`, `site.data.updates`, classes from Task 3, `site.static_files` for the portrait slot.
 
-- [ ] **Step 1: Write `index.html`**
+- [x] **Step 1: Write `index.html`**
 
 ```html
 ---
@@ -746,7 +746,7 @@ description: Cheng-i Wang (汪正一) — Deep Learning Engineer at AudioShake, 
 </section>
 ```
 
-- [ ] **Step 2: Build and check**
+- [x] **Step 2: Build and check**
 
 Run:
 ```bash
@@ -758,7 +758,7 @@ grep -c 'chw160' _site/index.html
 ```
 Expected: `9` list items; `0` portrait (file absent); AudioShake count ≥ 4; `0` (old email gone).
 
-- [ ] **Step 3: Prove the portrait slot works, then remove the probe**
+- [x] **Step 3: Prove the portrait slot works, then remove the probe**
 
 Run:
 ```bash
@@ -766,7 +766,7 @@ cp img/p9.jpg img/portrait.jpg && $JEKYLL build >/dev/null 2>&1 && grep -c 'clas
 ```
 Expected: `1`. (`img/portrait.jpg` is removed again; `git status` must not show it.)
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add index.html
@@ -785,7 +785,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Consumes: `site.data.publications`, `site.data.patents`, classes from Task 3.
 
-- [ ] **Step 1: Write `publications.html`**
+- [x] **Step 1: Write `publications.html`**
 
 ```html
 ---
@@ -826,7 +826,7 @@ description: Publications and patents of Cheng-i Wang — music information retr
 </ol>
 ```
 
-- [ ] **Step 2: Build and check ordering and counts**
+- [x] **Step 2: Build and check ordering and counts**
 
 Run:
 ```bash
@@ -837,7 +837,7 @@ grep -c 'patents.google.com' _site/publications.html
 ```
 Expected: `2025 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2011`; `27` (25 papers + 2 patents); `2`.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add publications.html
@@ -855,7 +855,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Create: `music.html` (unpublished)
 - Create: `README.md`
 
-- [ ] **Step 1: Write `projects.html`**
+- [x] **Step 1: Write `projects.html`**
 
 ```html
 ---
@@ -869,7 +869,7 @@ published: false
 <p class="muted-serif">Content to be decided. Candidate items: vmo (Python Variable Markov Oracle library), Dialogue RT, Guided Synthesis with Markov Oracle, Topic Modeling of Audio Signals with LDA, Pd externals / audio effects, automatic crossfade point finding.</p>
 ```
 
-- [ ] **Step 2: Write `music.html`**
+- [x] **Step 2: Write `music.html`**
 
 ```html
 ---
@@ -883,7 +883,7 @@ published: false
 <p class="muted-serif">Content to be decided. Candidate items: bassist for Sandee Chan and Waa Wei, Apay, recording engineer on Sodagreen’s Incomparable Beauty, Tainaner Ensemble’s Castrated Chicken, Kinematik Dance Theater projection design.</p>
 ```
 
-- [ ] **Step 3: Write `README.md`**
+- [x] **Step 3: Write `README.md`**
 
 ````markdown
 # wangsix.github.io
@@ -919,12 +919,12 @@ Create a folder such as `demos/my-demo/` with its own `index.html` and assets. F
 With a modern Ruby: `bundle install && bundle exec jekyll serve`, then open http://localhost:4000.
 ````
 
-- [ ] **Step 4: Build and check the drafts are excluded**
+- [x] **Step 4: Build and check the drafts are excluded**
 
 Run: `$JEKYLL build 2>&1 | tail -1; ls _site/projects.html _site/music.html _site/README.md 2>&1 | grep -c 'No such'`
 Expected: `3`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add projects.html music.html README.md
@@ -945,7 +945,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Produces: `_includes/logo.svg`, an `<svg>` with `viewBox`, `fill="currentColor"`, `aria-hidden="true"`.
 
-- [ ] **Step 1: Trace `img/chengiwangwebsite.png` (the mark alone, 88×85)**
+- [x] **Step 1: Trace `img/chengiwangwebsite.png` (the mark alone, 88×85)**
 
 Save as `<scratchpad>/trace_logo.py` (the scratchpad is the parent of the tracing venv) and run it with the tracing venv's python from the worktree root:
 
@@ -988,11 +988,11 @@ print(OUT, len(svg), "bytes,", len(path.curves), "curves")
 Run: `VENV=/private/tmp/claude-504/-Users-cheng-iwang-Repos-wangsix-github-io--claude-worktrees-personal-website-redesign-71a6ce/a6bf81b2-13b1-43c9-80d3-0e6627b0a198/scratchpad/trace-venv; $VENV/bin/python $VENV/../trace_logo.py`
 Expected: `_includes/logo.svg <N> bytes, <small number> curves`, N under 20 KB.
 
-- [ ] **Step 2: Eyeball the trace**
+- [x] **Step 2: Eyeball the trace**
 
 Copy `_includes/logo.svg` to `_site/logo-check.svg` after a build and open it in the built-in browser at a large size next to `img/chengiwangwebsite.png`. Accept if the brushstroke silhouette matches with no stray specks. If specks remain, raise `turdsize` to 8 and re-run. If the shape is mangled, stop, keep the PNG, and report.
 
-- [ ] **Step 3: Switch the header to the inline SVG**
+- [x] **Step 3: Switch the header to the inline SVG**
 
 In `_layouts/default.html`, replace the `<img class="brand-mark" …>` line with:
 
@@ -1008,12 +1008,12 @@ In `css/site.css`, replace the `.brand-mark` rule with:
 ```
 and delete the `--logo-filter` token from both `:root` blocks (no longer used).
 
-- [ ] **Step 4: Build and check**
+- [x] **Step 4: Build and check**
 
 Run: `$JEKYLL build 2>&1 | tail -1; grep -c '<svg' _site/index.html; grep -c 'logo-filter' _site/css/site.css`
 Expected: `1`; `0`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add _includes/logo.svg _layouts/default.html css/site.css
@@ -1029,7 +1029,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Files:**
 - Create: `.claude/launch.json` (not committed; `.claude` is excluded from the build and ignored by git)
 
-- [ ] **Step 1: Write `.claude/launch.json`**
+- [x] **Step 1: Write `.claude/launch.json`**
 
 ```json
 {
@@ -1045,11 +1045,11 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 }
 ```
 
-- [ ] **Step 2: Build and start the preview**
+- [x] **Step 2: Build and start the preview**
 
 Run `$JEKYLL build`, then `preview_start` with name `site`.
 
-- [ ] **Step 3: Check each combination and screenshot**
+- [x] **Step 3: Check each combination and screenshot**
 
 For each: take a screenshot, read the page text, confirm no console errors.
 1. Home, desktop, light, EN: header with logo + nav + toggle; hero photo muted; name, headline, three bio paragraphs, nine updates; footer with LinkedIn and Scholar only.
@@ -1060,7 +1060,7 @@ For each: take a screenshot, read the page text, confirm no console errors.
 6. Navigate to `/projects.html` and `/music.html`: 404 from the Python server.
 7. Navigate to `/publications.html` directly: 200 (old URL preserved).
 
-- [ ] **Step 4: Fix anything found, rebuild, re-check, commit fixes**
+- [x] **Step 4: Fix anything found, rebuild, re-check, commit fixes**
 
 ```bash
 git add -A
@@ -1070,6 +1070,6 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 ```
 (Only if fixes were needed.)
 
-- [ ] **Step 5: Final report to owner**
+- [x] **Step 5: Final report to owner**
 
 List: dates marked approx. in `updates.yml`; dead publication links from Task 2 Step 7; two Scholar entries deliberately left out ("Learning audio features for singer identification and embedding", 2018, no venue; "Discovery of Repeated Themes and Sections with Variable Markov Oracle", undated); portrait slot instructions; that nothing was pushed.
