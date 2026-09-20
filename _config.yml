@@ -1,1 +1,15 @@
 title: Cheng-i Wang
+description: Cheng-i Wang (汪正一) — Deep Learning Engineer at AudioShake. PhD in Computer Music, UC San Diego. Audio source separation, music information retrieval, bassist.
+url: https://wangsix.github.io
+baseurl: ""
+lang: en
+timezone: America/Los_Angeles
+
+exclude:
+  - docs
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .claude
+  - node_modules
