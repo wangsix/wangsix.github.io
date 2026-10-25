@@ -34,7 +34,8 @@ description: Cheng-i Wang (汪正一) — Deep Learning Engineer at AudioShake, 
   <ul class="updates">
     {%- for u in site.data.updates %}
     <li>
-      <time datetime="{{ u.date }}">{{ u.date }}</time>
+      {%- assign d = u.date | append: "-01" %}
+      <time datetime="{{ u.date }}"><span lang="en">{{ d | date: "%b %Y" }}</span><span lang="zh-Hant">{{ d | date: "%Y 年 %-m 月" }}</span></time>
       <span>
         {%- if u.url %}<a href="{{ u.url }}"><span lang="en">{{ u.en }}</span><span lang="zh-Hant">{{ u.zh }}</span></a>
         {%- else %}<span lang="en">{{ u.en }}</span><span lang="zh-Hant">{{ u.zh }}</span>{% endif %}

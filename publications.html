@@ -15,7 +15,7 @@ description: Publications and patents of Cheng-i Wang — music information retr
 <ol class="pubs">
   {%- for p in g.items %}
   <li>
-    <span class="pub-authors">{{ p.authors }}.</span>
+    <span class="pub-authors">{{ p.authors | append: "." | replace: "..", "." }}</span>
     {% if p.url %}<a class="pub-title" href="{{ p.url }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}.
     <span class="pub-venue">{{ p.venue }}.</span>
     {%- if p.note %} <span class="pub-note">{{ p.note }}</span>{% endif %}
@@ -28,7 +28,7 @@ description: Publications and patents of Cheng-i Wang — music information retr
 <ol class="pubs">
   {%- for p in site.data.patents %}
   <li>
-    <span class="pub-authors">{{ p.inventors }}.</span>
+    <span class="pub-authors">{{ p.inventors | append: "." | replace: "..", "." }}</span>
     <a class="pub-title" href="{{ p.url }}">{{ p.title }}</a>.
     <span class="pub-venue">{{ p.number }}, {{ p.status }} {{ p.date }}.</span>
   </li>

@@ -13,8 +13,8 @@
   --bg: #f6f3e6;
   --text: #5a5650;
   --text-strong: #181818;
-  --muted: #8a857a;
-  --serif-muted: #b0ab99;
+  --muted: #6f6a5f;
+  --serif-muted: #726d62;
   --rule: #e2dfd4;
   --link: #3f6a8f;
   --accent: #F15A29;
@@ -22,7 +22,7 @@
   --label-fg: #f6f3e6;
   --photo-filter: grayscale(.6) sepia(.2) contrast(.95);
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
-  --serif-italic: "Newsreader", Georgia, "Times New Roman", "PingFang TC", "Noto Serif TC", serif;
+  --serif-italic: "Newsreader", Georgia, "Times New Roman", "Noto Serif TC", serif;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -42,6 +42,9 @@
 /* ---------- Language switching ---------- */
 [data-lang="en"] [lang="zh-Hant"] { display: none !important; }
 [data-lang="zh"] [lang="en"] { display: none !important; }
+/* CJK has no italic: keep zh text upright and on the sans stack inside serif-italic contexts. */
+[lang="zh-Hant"] { font-style: normal; }
+:is(.muted-serif, .headline, .updates time, .pub-venue, .pub-note) [lang="zh-Hant"] { font-family: var(--sans); }
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -122,7 +125,8 @@ button { font: inherit; }
   text-transform: uppercase;
   padding: .2em .55em .15em;
 }
-.muted-serif { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); font-size: 1.05rem; }
+.muted-serif, .headline, .updates time, .pub-venue, .pub-note { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); }
+.muted-serif { font-size: 1.05rem; }
 .photo {
   width: 100%;
   height: 200px;
@@ -145,13 +149,13 @@ button { font: inherit; }
   .about:has(.portrait) { grid-template-columns: 1fr; }
   .about .portrait { grid-column: 1; grid-row: auto; margin-top: 0; }
 }
-.headline { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); font-size: 1.15rem; margin-bottom: 1.25rem; }
+.headline { font-size: 1.15rem; margin-bottom: 1.25rem; }
 .about-name-zh { font-size: 1rem; color: var(--muted); font-weight: 500; letter-spacing: .15em; margin-left: .5rem; }
 
 .updates { list-style: none; margin: 0; padding: 0; }
-.updates li { display: grid; grid-template-columns: 5.5rem 1fr; gap: .5rem 1rem; padding: .6rem 0; border-top: 1px solid var(--rule); }
+.updates li { display: grid; grid-template-columns: 6.5rem 1fr; gap: .5rem 1rem; padding: .6rem 0; border-top: 1px solid var(--rule); }
 .updates li:last-child { border-bottom: 1px solid var(--rule); }
-.updates time { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); font-size: .95rem; padding-top: .1rem; }
+.updates time { font-size: .95rem; padding-top: .1rem; white-space: nowrap; }
 @media (max-width: 480px) {
   .updates li { grid-template-columns: 1fr; gap: 0; }
 }
@@ -161,6 +165,4 @@ button { font: inherit; }
 .pubs li { padding: .55rem 0; border-top: 1px solid var(--rule); }
 .pubs li:last-child { border-bottom: 1px solid var(--rule); }
 .pub-title { color: var(--text-strong); font-weight: 500; }
-a.pub-title:hover { color: var(--accent); }
 .pub-authors { color: var(--text); }
-.pub-venue, .pub-note { font-family: var(--serif-italic); font-style: italic; color: var(--serif-muted); }
